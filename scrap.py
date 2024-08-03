@@ -26,6 +26,7 @@ def get_content_from_car_page(id):
     """
     File extracts data for given car. Returns a list. 
     Data: 
+    ID,
     price, 
     transmission, 
     body type, 
@@ -39,7 +40,7 @@ def get_content_from_car_page(id):
     top speed, 
     acceleration, 
     consumption"""
-    list_of_data = []
+    list_of_data = [id]
     with open(f"cars/{id}.html", "r") as f:
         content = f.read()
 
@@ -110,4 +111,6 @@ def get_content_from_car_page(id):
         list_of_data.append(combined_consumption)
 
         return list_of_data
-print(get_content_from_car_page(2))
+    
+#TEST CASE
+#print(get_content_from_car_page(2))
