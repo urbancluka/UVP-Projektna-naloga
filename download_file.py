@@ -34,10 +34,16 @@ def download_main(i, file_name):
 #for index in range(starting_page_number, max_page_number + 1):
 #   download_main(index, f"page{index}")
 
-#To be merged together:
-def download_cars(url, file_name):
-    """Almost identical to download_main, but saves to different folder. """
+
+#https://www.cars-data.com/en/abarth-500-1-4-16v-t-jet-specs/1
+#This wont work. Need to find a way to save car sites. 
+def download_cars(dict_id):
+    """Function takes a dict of type [[id, name, url]] and saves the site under the id"""
+
     response = requests.get(url)
+    #url = https://www.cars-data.com/en/abarth-500-1-4-16v-t-jet-specs/123455
+    file_name = 0
+    print(file_name)
     print(f"URL of downloaded website: {response.url}")
     if response.ok:
         print("Response OK. Downloading site...")
@@ -47,4 +53,6 @@ def download_cars(url, file_name):
     else:
         print(f"Error! error code: {response.status_code}")
     return
+
+download_cars("https://www.cars-data.com/en/abarth-500-1-4-16v-t-jet-specs/1")
 
