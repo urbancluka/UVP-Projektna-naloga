@@ -18,7 +18,7 @@ max_page_number = 5
 
 #https://www.cars-data.com/en/all-cars/page1.html -- https://www.cars-data.com/en/all-cars/page97.html
 
-def download_main(i, file_name=f"page{i}.html"):
+def download_main(i):
     url = f"https://www.cars-data.com/en/all-cars/page{i}.html"
     """
     Function takes the page number of desired site and the names of the file, to be saved as. Function returns None.
@@ -27,7 +27,7 @@ def download_main(i, file_name=f"page{i}.html"):
     print(f"URL of downloaded website: {response.url}")
     if response.ok:
         print("Response OK. Downloading site...")
-        with open(f"websites/{file_name}.html", "wb") as file:
+        with open(f"websites/page{i}.html", "wb") as file:
             file.write(response.content)
             print("Website saved to memory")
     else:
