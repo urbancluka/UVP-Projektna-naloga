@@ -31,28 +31,28 @@ def download_main(i, file_name):
         print(f"Error! error code: {response.status_code}")
     return
 
+#This loop could be built into the download_main functon
 #for index in range(starting_page_number, max_page_number + 1):
 #   download_main(index, f"page{index}")
 
 
 #https://www.cars-data.com/en/abarth-500-1-4-16v-t-jet-specs/1
-#This wont work. Need to find a way to save car sites. 
-def download_cars(dict_id):
-    """Function takes a dict of type [[id, name, url]] and saves the site under the id"""
-
-    response = requests.get(url)
-    #url = https://www.cars-data.com/en/abarth-500-1-4-16v-t-jet-specs/123455
-    file_name = 0
-    print(file_name)
-    print(f"URL of downloaded website: {response.url}")
-    if response.ok:
-        print("Response OK. Downloading site...")
-        with open(f"cars/{file_name}", "wb") as file:
-            file.write(response.content)
-            print("Website saved to memory")
-    else:
-        print(f"Error! error code: {response.status_code}")
+def download_cars(list_id):
+    """Function takes a list of type [[id, name, url]] and saves the site under the id"""
+    for item in list_id:
+        response = requests.get(item[2])
+        #url = https://www.cars-data.com/en/abarth-500-1-4-16v-t-jet-specs/123455
+        print(f"URL of downloaded website: {response.url}")
+        if response.ok:
+            print("Response OK. Downloading site...")
+            with open(f"cars/{item[0]}", "wb") as file:
+                file.write(response.content)
+                print("Website saved to memory")
+        else:
+            print(f"Error! error code: {response.status_code} at url {item[2]}")
     return
+#TEST CASE
+#download_cars([[2, 'abarth-500c-1-4-16v-t-jet', 'https://www.cars-data.com/en/abarth-500c-1-4-16v-t-jet-specs/2']])
 
-download_cars("https://www.cars-data.com/en/abarth-500-1-4-16v-t-jet-specs/1")
+
 
