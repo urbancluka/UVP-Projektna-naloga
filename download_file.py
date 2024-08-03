@@ -32,7 +32,7 @@ def download_main(i):
             print("Website saved to memory")
     else:
         print(f"Error! error code: {response.status_code}")
-    return
+        return
 
 #This loop could be built into the download_main functon
 #for index in range(starting_page_number, max_page_number + 1):

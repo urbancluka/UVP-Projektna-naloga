@@ -22,6 +22,8 @@ def extract_name_and_id(list_of_urls):
         list_id.append([id, name, url])
     return list_id
 
+#print(extract_name_and_id(get_urls_from_main("page1.html")))
+
 def get_content_from_car_page(id):
     """
     File extracts data for given car. Returns a list of data. 
@@ -101,13 +103,11 @@ def get_content_from_car_page(id):
         re_acceleration = r'Acceleration 0-100 Km / H:</td><td class="col-6">(.*?) s</td>'
         acceleration = re.findall(re_acceleration, content)[0]
         acceleration = re.sub(",", r".", acceleration)
-        acceleration = float(acceleration)
         list_of_data.append(acceleration)
 
         re_combined_consumption = r'Combined Consumption:</td><td class="col-6 grey">(.*?) l/100km</td>'
         combined_consumption = re.findall(re_combined_consumption, content)[0]
         combined_consumption = re.sub(",", r".", combined_consumption)
-        combined_consumption = float(combined_consumption)
         list_of_data.append(combined_consumption)
 
         return list_of_data

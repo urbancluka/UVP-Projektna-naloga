@@ -23,7 +23,7 @@ def create_main_csv(csv_name, list_of_fields=["Id",
 
 def save_list_to_csv(file_name, list_of_data):
     """Function writes list of data into an existing .csv file."""
-    with open(f"{file_name}.csv", "a") as f:
+    with open(f"{file_name}", "a") as f:
         #add a check if file is empty: if so, stop the function.
         #add check to see if lenth of list_of_data is the same as csv head
         write = csv.writer(f)
