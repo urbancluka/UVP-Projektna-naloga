@@ -12,7 +12,7 @@ def get_urls_from_main(file):
         return urls
 
 def extract_name_and_id(list_of_urls):
-    """Function takes a list of urls and returns a list of the form [[id, name, url]]. Used then to save car pages"""
+    """Function takes a list of urls and returns a list of the form [ [id, name, url] ]. Used then to save car pages"""
     list_id = []
     for url in list_of_urls:
         re_id = r'-specs/(\d*)'
@@ -24,22 +24,22 @@ def extract_name_and_id(list_of_urls):
 
 def get_content_from_car_page(id):
     """
-    File extracts data for given car. Returns a list. 
+    File extracts data for given car. Returns a list of data. 
     Data: 
-    ID,
-    price, 
-    transmission, 
-    body type, 
-    number of seats, 
-    drive wheel, 
-    fuel type, 
-    number of cylinders
-    engine capacity, 
-    power(kW/hp), 
-    max torque, 
-    top speed, 
-    acceleration, 
-    consumption"""
+    - ID,
+    - price, 
+    - transmission, 
+    - body type, 
+    - number of seats, 
+    - drive wheel, 
+    - fuel type, 
+    - number of cylinders
+    - engine capacity, 
+    - power(kW/hp), 
+    - max torque, 
+    - top speed, 
+    - acceleration, 
+    - consumption"""
     list_of_data = [id]
     with open(f"cars/{id}.html", "r") as f:
         content = f.read()
@@ -86,7 +86,7 @@ def get_content_from_car_page(id):
         re_power = r'>Power (hp):</td><td class="col-6 grey">(.*?)</td></tr><tr'
         power = re.findall(re_power, content)#[0]
         print(power)
-        list_of_data.append(power)
+        list_of_data.append("power")
 
         re_torque = r'Max Torque:</td><td class="col-6 grey">(.*?) nm</td>'
         torque = re.findall(re_torque, content)[0]
@@ -112,5 +112,6 @@ def get_content_from_car_page(id):
 
         return list_of_data
     
+
 #TEST CASE
-#print(get_content_from_car_page(2))
+print(get_content_from_car_page(2))
