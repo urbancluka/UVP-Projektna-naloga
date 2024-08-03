@@ -17,15 +17,18 @@ def create_main_csv(csv_name, list_of_fields=["Id",
                                               "Acceleration to 100km/h",
                                               "Combined consumption l/100km"]):
     """Function creates a .csv file with the fields given in the list list_of_fields. Returns None"""
-    with open(csv_name, "w") as f:
+    with open(f"{csv_name}.csv", "w") as f:
         write = csv.writer(f)
         write.writerow(list_of_fields)
 
 def save_list_to_csv(file_name, list_of_data):
     """Function writes list of data into an existing .csv file."""
-    with open(file_name, "a") as f:
+    with open(f"{file_name}.csv", "a") as f:
         #add a check if file is empty: if so, stop the function.
         #add check to see if lenth of list_of_data is the same as csv head
         write = csv.writer(f)
         write.writerow(list_of_data)
+    
+create_main_csv("main")
+save_list_to_csv("main", list_of_data)
 
