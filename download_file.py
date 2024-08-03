@@ -28,7 +28,7 @@ def download_main(i, file_name):
             file.write(response.content)
             print("Website saved to memory")
     else:
-        print(f"Error! erroe code: {response.status_code}")
+        print(f"Error! error code: {response.status_code}")
     return
 
 #for index in range(starting_page_number, max_page_number + 1):
@@ -45,6 +45,6 @@ def download_cars(url, file_name):
             file.write(response.content)
             print("Website saved to memory")
     else:
-        print(f"Error! erroe code: {response.status_code}")
+        print(f"Error! error code: {response.status_code}")
     return
 
