@@ -114,4 +114,4 @@ def get_content_from_car_page(id):
     
 
 #TEST CASE
-print(get_content_from_car_page(2))
+#print(get_content_from_car_page(2))
