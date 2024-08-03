@@ -100,14 +100,14 @@ def get_content_from_car_page(id):
 
         re_acceleration = r'Acceleration 0-100 Km / H:</td><td class="col-6">(.*?) s</td>'
         acceleration = re.findall(re_acceleration, content)[0]
-        acceleration = re.sub(",", "", acceleration)
-        acceleration = int(acceleration)
+        acceleration = re.sub(",", r".", acceleration)
+        acceleration = float(acceleration)
         list_of_data.append(acceleration)
 
         re_combined_consumption = r'Combined Consumption:</td><td class="col-6 grey">(.*?) l/100km</td>'
         combined_consumption = re.findall(re_combined_consumption, content)[0]
-        combined_consumption = re.sub(",", "", combined_consumption)
-        combined_consumption = int(combined_consumption)
+        combined_consumption = re.sub(",", r".", combined_consumption)
+        combined_consumption = float(combined_consumption)
         list_of_data.append(combined_consumption)
 
         return list_of_data
