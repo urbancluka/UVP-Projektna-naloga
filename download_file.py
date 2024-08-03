@@ -1,12 +1,14 @@
 #This file contains the function to download the .html file from the internet and saves it to local memory.
 import requests
 
-#Set website url
-url = "https://eventregistry.org/intelligence?tab=items&searchMode=concept&type=articles&conditions=3-en-Poverty-Poverty&dateStart=2024-07-03&dateEnd=2024-08-03&percentileRange=0&percentileRange=100&forceMaxDataTimeWindow=31&dataType=news"
-#Second page:
-# "https://eventregistry.org/intelligence?tab=items&searchMode=concept&type=articles&conditions=3-en-Poverty-Poverty&dateStart=2024-07-03&dateEnd=2024-08-03&percentileRange=0&percentileRange=100&forceMaxDataTimeWindow=31&dataType=news"
 
-download_params = {"downloadformat": "html"}
+#Set website url
+url = ""
+#Set file_name:
+file_name = ""
+#Number of pages:
+pages = 0
+#https://www.cars-data.com/en/all-cars/page1.html -- https://www.cars-data.com/en/all-cars/page97.html
 
 def download(url, file_name):
     """
@@ -15,8 +17,10 @@ def download(url, file_name):
     response = requests.get(url)
     print(f"URL of downloaded website: {response.url}")
     if response.ok:
-        with open(file_name, "wb") as file:
+        with open(f"websites/{file_name}", "wb") as file:
             file.write(response.content)
     else:
         print(f"Error! erroe code: {response.status_code}")
         return
+
+download(url, file_name)
