@@ -24,7 +24,7 @@ def download_main(i, file_name):
     print(f"URL of downloaded website: {response.url}")
     if response.ok:
         print("Response OK. Downloading site...")
-        with open(f"websites/{file_name}", "wb") as file:
+        with open(f"websites/{file_name}.html", "wb") as file:
             file.write(response.content)
             print("Website saved to memory")
     else:
@@ -45,12 +45,15 @@ def download_cars(list_id):
         print(f"URL of downloaded website: {response.url}")
         if response.ok:
             print("Response OK. Downloading site...")
-            with open(f"cars/{item[0]}", "wb") as file:
+            with open(f"cars/{item[0]}.html", "wb") as file:
                 file.write(response.content)
                 print("Website saved to memory")
         else:
             print(f"Error! error code: {response.status_code} at url {item[2]}")
+        
     return
+
+
 #TEST CASE
 #download_cars([[2, 'abarth-500c-1-4-16v-t-jet', 'https://www.cars-data.com/en/abarth-500c-1-4-16v-t-jet-specs/2']])
 
