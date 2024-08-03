@@ -7,8 +7,10 @@ def get_urls_from_main(file):
         content = f.read()
         re_link = r'<div class="col-4"> <a href="(.*?)" title="'
         urls = re.findall(re_link, content)
+        for index in range(len(urls)):
+            urls[index] = urls[index] + "/tech"
         return urls
-    
+
 def extract_name_and_id(list_of_urls):
     """Function takes a list of urls and returns a list of the form [[id, name, url]]. Used then to save car pages"""
     list_id = []
@@ -20,11 +22,92 @@ def extract_name_and_id(list_of_urls):
         list_id.append([id, name, url])
     return list_id
 
-def get_content_from_car_page(file):
-    """File extracts data for given car. Returns a dict. Data: price, transmission, body type, number of seats, drive wheel, fuel type, engine capacity, power(kW/hp), max torque, top speed, acceleration, consumption"""
-    with open(f"cars/{file}", "r") as f:
+def get_content_from_car_page(id):
+    """
+    File extracts data for given car. Returns a list. 
+    Data: 
+    price, 
+    transmission, 
+    body type, 
+    number of seats, 
+    drive wheel, 
+    fuel type, 
+    number of cylinders
+    engine capacity, 
+    power(kW/hp), 
+    max torque, 
+    top speed, 
+    acceleration, 
+    consumption"""
+    list_of_data = []
+    with open(f"cars/{id}.html", "r") as f:
         content = f.read()
-        re_name = r'<span itemprop="name">(.?*)</span>'
-        print(re.findall(re_name, content))
 
-print(extract_name_and_id(get_urls_from_main("page1"))[1])
+        re_price = r'Price:</td><td class="col-6 grey">&euro; (.*?)</td></tr>'
+        price = re.findall(re_price, content)[0]
+        price = re.sub("[.]", "", price)
+        price = int(price)
+        list_of_data.append(price)
+
+        re_transmission = r'Transmission:</td><td class="col-6 grey">(.*?)</td>'
+        transmission = re.findall(re_transmission, content)[0]
+        list_of_data.append(transmission)
+
+        re_body_type = r'Body Type:</td><td class="col-6">(.*?)</td>'
+        body_type = re.findall(re_body_type, content)[0]
+        list_of_data.append(body_type)
+
+        re_number_of_seats = r'Number Of Seats:</td><td class="col-6">(\d)</td>'
+        number_of_seats = re.findall(re_number_of_seats, content)[0]
+        number_of_seats = int(number_of_seats)
+        list_of_data.append(number_of_seats)
+
+        re_drive_wheel = r'Drive Wheel :</td><td class="col-6 grey">(.*?)</td>'
+        drive_wheel = re.findall(re_drive_wheel, content)[0]
+        list_of_data.append(drive_wheel)
+
+        re_fuel_type = r'Fuel Type:</td><td class="col-6 grey">(.*?)</td>'
+        fuel_type = re.findall(re_fuel_type, content)[0]
+        list_of_data.append(fuel_type)
+
+        re_number_of_cylinders = r'Cylinders:</td><td class="col-6 grey">(.*?)</td>'
+        number_of_cylinders = re.findall(re_number_of_cylinders, content)[0]
+        number_of_cylinders = re.sub("[^0-9]", "", number_of_cylinders)
+        number_of_cylinders = int(number_of_cylinders)
+        list_of_data.append(number_of_cylinders)
+
+        re_engine_capacity = r'Engine Capacity:</td><td class="col-6 grey">(.*?) cc</td>'
+        engine_capacity = re.findall(re_engine_capacity, content)[0]
+        engine_capacity = int(engine_capacity)
+        list_of_data.append(engine_capacity)
+
+        #Power doesnt work
+        re_power = r'>Power (hp):</td><td class="col-6 grey">(.*?)</td></tr><tr'
+        power = re.findall(re_power, content)#[0]
+        print(power)
+        list_of_data.append(power)
+
+        re_torque = r'Max Torque:</td><td class="col-6 grey">(.*?) nm</td>'
+        torque = re.findall(re_torque, content)[0]
+        torque = int(torque)
+        list_of_data.append(torque)
+
+        re_top_speed = r'Top Speed:</td><td class="col-6 grey">(.*?) km/h</td>'
+        top_speed = re.findall(re_top_speed, content)[0]
+        top_speed = int(top_speed)
+        list_of_data.append(top_speed)
+
+        re_acceleration = r'Acceleration 0-100 Km / H:</td><td class="col-6">(.*?) s</td>'
+        acceleration = re.findall(re_acceleration, content)[0]
+        acceleration = re.sub(",", "", acceleration)
+        acceleration = int(acceleration)
+        list_of_data.append(acceleration)
+
+        re_combined_consumption = r'Combined Consumption:</td><td class="col-6 grey">(.*?) l/100km</td>'
+        combined_consumption = re.findall(re_combined_consumption, content)[0]
+        combined_consumption = re.sub(",", "", combined_consumption)
+        combined_consumption = int(combined_consumption)
+        list_of_data.append(combined_consumption)
+
+        return list_of_data
+print(get_content_from_car_page(2))
