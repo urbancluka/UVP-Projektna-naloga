@@ -1,4 +1,7 @@
-#This file contains the function to download the .html file from the internet and saves it to local memory. 
+#This file contains the functions to download the .html files from the internet and saves it to local memory. 
+#download_main() for main page downloads,saved to "websites"
+#download_cars() saves the spefific cars website to the folder "cars"
+
 import requests
 
 
