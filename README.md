@@ -12,3 +12,4 @@ Naloga je pridobiti podatke s HTML strani *https://www.cars-data.com/en/all-cars
  - [ ] Fix power scrapping
  - [ ] Add test to see if file is empty in save_csv.py -> save_list_to_csv
  - [ ] Add test to see if list_of_data is same length as csv head
+ - [ ] Fix missing data point in acceleration
