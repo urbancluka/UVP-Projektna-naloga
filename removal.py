@@ -11,11 +11,9 @@ def delet_contents_of_folder(path_to_folder):
 
 def delete_csv():
     files = os.listdir(".")
-    print(files)
     for file in files:
         if file.endswith(".csv"):
             os.remove(file)
 
-delete_csv()
 
 

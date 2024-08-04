@@ -29,5 +29,6 @@ def save_list_to_csv(list_of_data, file_name="data.csv"):
         #add check to see if lenth of list_of_data is the same as csv head
         write = csv.writer(f)
         write.writerow(list_of_data)
+
     
 
