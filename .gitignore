@@ -3,3 +3,7 @@
 websites/
 cars/
 __pycache__
+
+############### FILES ###############
+
+/.ipynb_checkpoints

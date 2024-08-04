@@ -87,7 +87,7 @@ def get_content_from_car_page(id):
         #Power doesnt work
         re_power = r'>Power (hp):</td><td class="col-6 grey">(.*?)</td></tr><tr'
         power = re.findall(re_power, content)#[0]
-        print(power)
+        #print(power)
         list_of_data.append("power")
 
         re_torque = r'Max Torque:</td><td class="col-6 grey">(.*?) nm</td>'
