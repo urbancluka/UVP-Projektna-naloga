@@ -49,8 +49,12 @@ def get_content_from_car_page(id):
         re_price = r'Price:</td><td class="col-6 grey">&euro; (.*?)</td></tr>'
         price = re.findall(re_price, content)[0]
         price = re.sub("[.]", "", price)
-        price = int(price)
+        try:
+            price = int(price)
+        except:
+            price = "NaN"
         list_of_data.append(price)
+        
 
         re_transmission = r'Transmission:</td><td class="col-6 grey">(.*?)</td>'
         transmission = re.findall(re_transmission, content)[0]
@@ -60,9 +64,12 @@ def get_content_from_car_page(id):
         body_type = re.findall(re_body_type, content)[0]
         list_of_data.append(body_type)
 
-        re_number_of_seats = r'Number Of Seats:</td><td class="col-6">(\d)</td>'
+        re_number_of_seats = r'Number Of Seats:</td><td class="col-6">(.*?)</td>'
         number_of_seats = re.findall(re_number_of_seats, content)[0]
-        number_of_seats = int(number_of_seats)
+        try:
+            number_of_seats = int(number_of_seats)
+        except:
+            number_of_seats = "NaN"
         list_of_data.append(number_of_seats)
 
         re_drive_wheel = r'Drive Wheel :</td><td class="col-6 grey">(.*?)</td>'
@@ -76,38 +83,58 @@ def get_content_from_car_page(id):
         re_number_of_cylinders = r'Cylinders:</td><td class="col-6 grey">(.*?)</td>'
         number_of_cylinders = re.findall(re_number_of_cylinders, content)[0]
         number_of_cylinders = re.sub("[^0-9]", "", number_of_cylinders)
-        number_of_cylinders = int(number_of_cylinders)
+        try:
+            number_of_cylinders = int(number_of_cylinders)
+        except:
+            number_of_cylinders = "NaN"
         list_of_data.append(number_of_cylinders)
 
         re_engine_capacity = r'Engine Capacity:</td><td class="col-6 grey">(.*?) cc</td>'
         engine_capacity = re.findall(re_engine_capacity, content)[0]
-        engine_capacity = int(engine_capacity)
+        try:
+            engine_capacity = int(engine_capacity)
+        except:
+            engine_capacity = "NaN"
         list_of_data.append(engine_capacity)
 
         #Power doesnt work
-        re_power = r'>Power (hp):</td><td class="col-6 grey">(.*?)</td></tr><tr'
-        power = re.findall(re_power, content)#[0]
-        #print(power)
-        list_of_data.append("power")
+        re_power = r'Total Max. Power (hp):</td><td class="col-6">(.*?)</td></tr><tr class="'
+        power = re.findall(re_power, content)
+        print(power)
+        list_of_data.append([])
 
         re_torque = r'Max Torque:</td><td class="col-6 grey">(.*?) nm</td>'
         torque = re.findall(re_torque, content)[0]
-        torque = int(torque)
+        try:
+            torque = int(torque)
+        except:
+            torque = "NaN"
         list_of_data.append(torque)
 
         re_top_speed = r'Top Speed:</td><td class="col-6 grey">(.*?) km/h</td>'
         top_speed = re.findall(re_top_speed, content)[0]
-        top_speed = int(top_speed)
+        try:
+            top_speed = float(top_speed)
+        except:
+            top_speed = "NaN"
         list_of_data.append(top_speed)
 
         re_acceleration = r'Acceleration 0-100 Km / H:</td><td class="col-6">(.*?) s</td>'
         acceleration = re.findall(re_acceleration, content)[0]
         acceleration = re.sub(",", r".", acceleration)
+        try:
+            acceleration = float(acceleration)
+        except:
+            acceleration = "NaN"
         list_of_data.append(acceleration)
 
         re_combined_consumption = r'Combined Consumption:</td><td class="col-6 grey">(.*?) l/100km</td>'
         combined_consumption = re.findall(re_combined_consumption, content)[0]
         combined_consumption = re.sub(",", r".", combined_consumption)
+        try:
+            combined_consumption = float(combined_consumption)
+        except:
+            combined_consumption = "NaN"
         list_of_data.append(combined_consumption)
 
         return list_of_data
