@@ -98,10 +98,13 @@ def get_content_from_car_page(id):
         list_of_data.append(engine_capacity)
 
         #Power doesnt work
-        re_power = r'Total Max. Power (hp):</td><td class="col-6">(.*?)</td></tr><tr class="'
-        power = re.findall(re_power, content)
-        print(power)
-        list_of_data.append([])
+        re_power = r'Total Max. Power \(hp\):</td><td class="col-6">(.*?)</td></tr><tr class="'
+        power = re.findall(re_power, content)[0]
+        try:
+            power = int(power)
+        except:
+            power = "NaN"
+        list_of_data.append(power)
 
         re_torque = r'Max Torque:</td><td class="col-6 grey">(.*?) nm</td>'
         torque = re.findall(re_torque, content)[0]
