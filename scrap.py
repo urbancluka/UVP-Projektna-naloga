@@ -31,6 +31,7 @@ def get_content_from_car_page(id):
     - ID,
     - price, 
     - transmission, 
+    - number of gears,
     - body type, 
     - number of seats, 
     - drive wheel, 
@@ -59,6 +60,15 @@ def get_content_from_car_page(id):
         re_transmission = r'Transmission:</td><td class="col-6 grey">(.*?)</td>'
         transmission = re.findall(re_transmission, content)[0]
         list_of_data.append(transmission)
+
+        re_number_of_gears = r'Transmission:</td><td class="col-6 grey">(.*?)</td>'
+        number_of_gears = re.findall(re_number_of_gears, content)[0]
+        number_of_gears = number_of_gears[0]
+        try:
+            number_of_gears = int(number_of_gears)
+        except:
+            number_of_cylinders = "NaN"
+        list_of_data.append(number_of_gears)
 
         re_body_type = r'Body Type:</td><td class="col-6">(.*?)</td>'
         body_type = re.findall(re_body_type, content)[0]
