@@ -6,7 +6,7 @@ import csv
 def create_main_csv(csv_name, list_of_fields=["Id",
                                               "Price (EUR)",
                                               "Transmission", 
-                                              "Number of gears",
+                                              "Number of Gears",
                                               "Body Type",
                                               "Number of seats",
                                               "Drive wheel",
