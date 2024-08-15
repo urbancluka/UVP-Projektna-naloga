@@ -1,7 +1,7 @@
 # UVP-Projektna-naloga
 
 ### Luka Urbanč
-Namen projekta je pridobiti podatke s HTML strani *https://www.cars-data.com/en/all-cars.html* in napraviti analizo teh podatkov s pomočjo Pandas.
+Namen projekta je pridobiti podatke s HTML [spletne strani](https://www.cars-data.com/en/all-cars.html) in napraviti analizo teh podatkov s pomočjo Pandas.
 
 ## Navodila za uporabo
 #### Namescanje Python-a in git-a
@@ -44,6 +44,11 @@ python3 main.py
 ```
 Nato moramo le slediti navodilom, ki se izpisujejo v terminalu. Podatki se shranjujejo v mape, a edina zares pomembna je `data.csv`, v kateri se nahajajo podatki, ki nas dejansko zanimajo. 
 
+#### Analiza
+Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za branje Jupyter Notebook-ov, ali pa si jo pogledamo kar na spletu na Github-u.
+
+
+#### Spodnji seznam se ne tice uporabnika
 
 ## TODO:
  - [x] Create function to download .html file with correct parameters
