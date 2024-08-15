@@ -52,7 +52,7 @@ def get_content_from_car_page(id):
         price = re.sub("[.]", "", price)
         try:
             price = int(price)
-        except:
+        except TypeError:
             price = "NaN"
         list_of_data.append(price)
         
@@ -66,7 +66,7 @@ def get_content_from_car_page(id):
         number_of_gears = number_of_gears[0]
         try:
             number_of_gears = int(number_of_gears)
-        except:
+        except TypeError:
             number_of_cylinders = "NaN"
         list_of_data.append(number_of_gears)
 
@@ -78,7 +78,7 @@ def get_content_from_car_page(id):
         number_of_seats = re.findall(re_number_of_seats, content)[0]
         try:
             number_of_seats = int(number_of_seats)
-        except:
+        except TypeError:
             number_of_seats = "NaN"
         list_of_data.append(number_of_seats)
 
@@ -95,7 +95,7 @@ def get_content_from_car_page(id):
         number_of_cylinders = re.sub("[^0-9]", "", number_of_cylinders)
         try:
             number_of_cylinders = int(number_of_cylinders)
-        except:
+        except TypeError:
             number_of_cylinders = "NaN"
         list_of_data.append(number_of_cylinders)
 
@@ -103,7 +103,7 @@ def get_content_from_car_page(id):
         engine_capacity = re.findall(re_engine_capacity, content)[0]
         try:
             engine_capacity = int(engine_capacity)
-        except:
+        except TypeError:
             engine_capacity = "NaN"
         list_of_data.append(engine_capacity)
 
@@ -112,7 +112,7 @@ def get_content_from_car_page(id):
         power = re.findall(re_power, content)[0]
         try:
             power = int(power)
-        except:
+        except TypeError:
             power = "NaN"
         list_of_data.append(power)
 
@@ -120,7 +120,7 @@ def get_content_from_car_page(id):
         torque = re.findall(re_torque, content)[0]
         try:
             torque = int(torque)
-        except:
+        except TypeError:
             torque = "NaN"
         list_of_data.append(torque)
 
@@ -128,7 +128,7 @@ def get_content_from_car_page(id):
         top_speed = re.findall(re_top_speed, content)[0]
         try:
             top_speed = float(top_speed)
-        except:
+        except TypeError:
             top_speed = "NaN"
         list_of_data.append(top_speed)
 
@@ -137,7 +137,7 @@ def get_content_from_car_page(id):
         acceleration = re.sub(",", r".", acceleration)
         try:
             acceleration = float(acceleration)
-        except:
+        except TypeError:
             acceleration = "NaN"
         list_of_data.append(acceleration)
 
@@ -146,7 +146,7 @@ def get_content_from_car_page(id):
         combined_consumption = re.sub(",", r".", combined_consumption)
         try:
             combined_consumption = float(combined_consumption)
-        except:
+        except TypeError:
             combined_consumption = "NaN"
         list_of_data.append(combined_consumption)
 
