@@ -10,9 +10,19 @@ import os
 
 def main():
     ############################## CLEARING FILES AND FOLDERS ##############################
-    rem.delet_contents_of_folder("websites/")
-    rem.delet_contents_of_folder("cars/")
-    rem.delete_csv()
+    #Delete files if folders exist
+    try:
+        rem.delet_contents_of_folder("websites/")
+        rem.delet_contents_of_folder("cars/")
+        rem.delete_csv()
+    except:
+        pass
+
+    #Add websites and cars folder if they dont exist
+    newpath = ["./websites" , "./cars"]
+    for path in newpath:
+        if not os.path.exists(path):
+            os.makedirs(path)
 
 
     ############################## INPUT OF STARTING AND ENDING PAGE ##############################
