@@ -9,29 +9,29 @@ Predvidevam, da imate python ze namescen na svojem racunalniku. Ce temu ni tako,
 
 Ce niste prepricani, ali je bilo namescanje uspesno, ali pa se ne spomnite, ce je python ze namesecn, lahko preverite njegovo razlicico tako, da v terminal (na macOS ga lahko odpremo z: CMD + Space -> Terminal -> Enter) vpisemo 
 
-```
+```console
 python --version #verzija pythona
 python3 --version #verzija python3
 ```
 
 Zelimo si tak izpis:
-```Python 3.12.2 #Stevilke se lahko razlikujejo```
+```console Python 3.12.2 #Stevilke se lahko razlikujejo```
 
 Prav tako lahko preverimo tudi verzijo git-a z naslednjim ukazom:
 
-```git --version```
+```console git --version```
 
 Nakar bi nam moral terminal izpisati:
-```git version 2.44.0```
+```console git version 2.44.0```
 
 
 #### Pridobivanja datotek z git-om
 Vse doticne datoteke tega programa lahko enostavno namestite tako da pozenete naslednji ukaz:
-```git clone https://github.com/urbancluka/UVP-Projektna-naloga.git```
+```console git clone https://github.com/urbancluka/UVP-Projektna-naloga.git```
 
 #### Struktura programa:
 Za zacetek izvajanja programa moramo pognati le `main.py`, kar storimo tako da v terminal vpisemo 
-```python3 main.py```
+``` console python3 main.py```
 Nato moramo le slediti navodilom, ki se izpisujejo v terminalu. Podatki se shranjujejo v mape, a edina zares pomembna je `data.csv`, v kateri se nahajajo podatki, ki nas dejansko zanimajo. 
 
 
