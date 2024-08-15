@@ -33,7 +33,7 @@ git version 2.44.0
 #### Namescanje knjiznic
 Pri delu bomo potrebovali tudi nekatera dodatna orodja. Vse lahko enostavno pridobite z 
 ```console
-pip3 install requests pandas
+pip3 install requests pandas numpy seaborn matplotlib
 ```
 
 #### Pridobivanja datotek z git-om
