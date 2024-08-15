@@ -51,9 +51,11 @@ def main():
     for file in list_of_files:
         urls = sc.get_urls_from_main(file)
         id_name_url = sc.extract_name_and_id(urls)
+        scsv.create_main_csv("auxillary.csv", list_of_fields=["Id", "Name", "Url"])
         dnf.download_cars(id_name_url)
         scsv.create_main_csv("data.csv")
         for temp_list in id_name_url:
+            scsv.save_list_to_csv(temp_list, file_name="auxillary.csv")
             data = sc.get_content_from_car_page(temp_list[0])
             scsv.save_list_to_csv(data)
     print("Vase datoteke se nahajajo v datoteki 'data.csv'")
