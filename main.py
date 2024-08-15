@@ -18,7 +18,6 @@ def main():
     ############################## INPUT OF STARTING AND ENDING PAGE ##############################
     valid_start_stop_conditions = False
     print("Pozdravljeni v programu za pridobivanje podatkov s spletne strani cars-data.com. \n")
-    input("Za nadaljevanje pritisnite tipko 'Enter' na vasi tipkovnici...")
     print("Program vas bo prosil za vnos stevilk. To storite tako, da vnesete stevilko, nato pa pritisnite 'Enter' na vasi tipkovnici.")
     while not valid_start_stop_conditions:
         starting_page = input("Prosimo, vnesite zacetno stran (stevilko), na kateri bi zaceli s zajemom podatkov. Stevilo mora biti manj od 97. Preglagamo, da zacnete z 1:\n")
