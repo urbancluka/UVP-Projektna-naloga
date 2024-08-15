@@ -30,6 +30,11 @@ Nakar bi nam moral terminal izpisati:
 git version 2.44.0
 ```
 
+#### Namescanje knjiznic
+Pri delu bomo potrebovali tudi nekatera dodatna orodja. Vse lahko enostavno pridobite z 
+```console
+pip3 install requests pandas
+```
 
 #### Pridobivanja datotek z git-om
 Vse doticne datoteke tega programa lahko enostavno namestite tako da pozenete naslednji ukaz:
@@ -42,7 +47,17 @@ Za zacetek izvajanja programa moramo pognati le `main.py`, kar storimo tako da v
 ``` console 
 python3 main.py
 ```
+
+V primeru da za ta ukaz nimamo dovoljenja, lahko vpisemo 
+```console
+sudo python3 main.py
+```
+a bomo morali za tem vpisati nase geslo.
+
 Nato moramo le slediti navodilom, ki se izpisujejo v terminalu. Podatki se shranjujejo v mape, a edina zares pomembna je `data.csv`, v kateri se nahajajo podatki, ki nas dejansko zanimajo. 
+
+Sproti se izpisujejo tudi spletne strani, ki jih shranjuje, ko nam izpise, `Vase datoteke se nahajajo v datoteki 'data.csv'` je program zakljucil z delom. 
+
 
 #### Analiza
 Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za branje Jupyter Notebook-ov, ali pa si jo pogledamo kar na spletu na Github-u.
