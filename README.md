@@ -60,7 +60,7 @@ Zajem podatkov lahko traja nekaj casa. Pri izvajanju na mojem računalniku je za
 
 
 ### Analiza
-Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za branje Jupyter Notebook-ov. Lažja možnost je, da si jo pogledamo kar na spletu na Github-u. Vsi grafi, rezultati in ugotovitve bodo predstavljene v tisti datoteki. Vse celice so bile pravilno poklicane, zato lahko analizo enostavno preberete brez dodatnega dela.
+Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za branje Jupyter Notebook-ov. Lažja možnost je, da si jo pogledamo kar na spletu na Github-u. Vsi grafi, rezultati in ugotovitve bodo predstavljene v tisti datoteki. Vse celice so bile pravilno poklicane, zato lahko analizo enostavno preberete brez dodatnega dela. Datotka je dostopna [na tej povezavi.](https://github.com/urbancluka/UVP-Projektna-naloga/blob/main/analiza.ipynb)
 
 
 
