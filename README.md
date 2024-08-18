@@ -42,7 +42,7 @@ Za uporabo programo morate naložiti vse datoteke na svoje račinalnik. Vse doti
 git clone https://github.com/urbancluka/UVP-Projektna-naloga.git
 ```
 
-### Struktura programa:
+### Uporabljanje programa:
 Najprej se moramo prepričati, da se trenutno nahajamo v pravilen direktoriju. Ko smo se prepričali oziroma smo se ustrezno premaknili, lahko začnemo z delom, Za začetek izvajanja programa moramo pognati le `main.py`, kar storimo tako da v terminal vpišemo 
 ``` console 
 python3 main.py
@@ -56,11 +56,11 @@ a bomo morali za tem vpisati naše geslo.
 
 Nato moramo le slediti navodilom, ki se izpisujejo v terminalu. Podatki se shranjujejo v mape, a edina zares pomembna je `data.csv`, v kateri se nahajajo podatki, ki nas dejansko zanimajo. 
 
-Zajem podatkov lahko traja nekaj casa. Sproti se izpisujejo tudi spletne strani, ki jih shranjuje. Ko nam izpise `Vase datoteke se nahajajo v datoteki 'data.csv'` je program zaključil z delom. 
+Zajem podatkov lahko traja nekaj casa. Pri izvajanju na mojem računalniku je zajem podatkov trajal nekje med 30 do 60 minut, odvisno od hitrosti povezave in odgovorov strežnika. Sproti se izpisujejo tudi spletne strani, ki jih shranjuje. Ko nam izpise `Vase datoteke se nahajajo v datoteki 'data.csv'` je program zaključil z delom. 
 
 
 ### Analiza
-Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za branje Jupyter Notebook-ov. Lažja možnost je, da si jo pogledamo kar na spletu na Github-u. Vsi grafi, rezultati in ugotovitve bodo predstavljene v tisti datoteki.
+Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za branje Jupyter Notebook-ov. Lažja možnost je, da si jo pogledamo kar na spletu na Github-u. Vsi grafi, rezultati in ugotovitve bodo predstavljene v tisti datoteki. Vse celice so bile pravilno poklicane, zato lahko analizo enostavno preberete brez dodatnega dela.
 
 
 
