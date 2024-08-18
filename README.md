@@ -1,22 +1,22 @@
 # UVP-Projektna-naloga
 
 ### Luka Urbanč
-Namen projekta je pridobiti podatke s HTML [spletne strani](https://www.cars-data.com/en/all-cars.html) in napraviti analizo teh podatkov s pomočjo Pandas. V .py datotekah se nahajajo funckije, ki se v datoteki `main.py` zložijo v program, ki naloži vse podatke s spletnih strani. Navodila za uporabo programa so napisana spodaj. 
+Namen projekta je pridobiti podatke s HTML [spletne strani](https://www.cars-data.com/en/all-cars.html) in napraviti analizo teh podatkov s pomočjo Pandas. V .py datotekah se nahajajo funkcije, ki se v datoteki `main.py` zložijo v program, ki naloži vse podatke s spletnih strani. Navodila za uporabo programa so napisana spodaj. 
 
 ## Navodila za uporabo
 ### Nameščanje Python-a in git-a
-Predvidevam, da že imate Python nameščen na svojem računalniku. če temu ni tako, lahko za namestitev Python-a sledite navodilom na [tej spletni strani](https://www.python.org/downloads/). Alternativna izbira za uporabnike macOS je tudi uporaba Brew-a, za uporabnika Windows operacijskega sistema pa je Python na voljo tudi v Microsoft Store-u. Za nameščanje git-a lahko sledite navodilom [tukaj](https://github.com/git-guides/install-git)
+Predvidevam, da že imate Python nameščen na svojem računalniku. če temu ni tako, lahko za namestitev Python-a sledite navodilom na [tej spletni strani](https://www.python.org/downloads/). Alternativna izbira za uporabnike macOS je tudi uporaba Brew-a, za uporabnike Windows operacijskega sistema pa je Python na voljo tudi v Microsoft Store-u. Za nameščanje git-a lahko sledite navodilom [tukaj](https://github.com/git-guides/install-git)
 
 Če niste prepričani, ali je bilo nameščanje uspešno, ali pa se ne spomnite, če je python že nameščen, lahko preverite njegovo različico tako, da v terminal (na macOS ga lahko odpremo z: CMD + Space -> "Terminal" -> Enter) vpišemo 
 
 ```console
-python --version #verzija pythona
+python --version #verzija Pythona
 python3 --version #verzija python3
 ```
 
 Želimo si tak izpis:
 ```console 
-Python 3.12.2 #Stevilke se lahko razlikujejo
+Python 3.12.2 #Številke se lahko razlikujejo
 ```
 
 Prav tako lahko preverimo tudi verzijo git-a z naslednjim ukazom:
@@ -37,22 +37,17 @@ pip3 install requests pandas numpy seaborn matplotlib
 ```
 
 ### Pridobivanja datotek z git-om
-Za uporabo programo morate naložiti vse datoteke na svoj račinalnik. Vse dotične datoteke tega programa lahko enostavno namestite tako da poženete naslednji ukaz:
+Za uporabo programa morate naložiti vse datoteke na svoj računalnik. Vse dotične datoteke tega programa lahko enostavno namestite tako da poženete naslednji ukaz:
 ```console 
 git clone https://github.com/urbancluka/UVP-Projektna-naloga.git
 ```
 
 ### Uporabljanje programa:
 Najprej se moramo prepričati, da se trenutno nahajamo v pravilen direktoriju. Ko smo se prepričali oziroma smo se ustrezno premaknili, lahko začnemo z delom. Za začetek izvajanja programa moramo pognati le `main.py`, kar storimo tako da v terminal vpišemo 
+
 ``` console 
 python3 main.py
 ```
-
-V primeru da za ta ukaz nimamo dovoljenja, lahko vpišemo 
-```console
-sudo python3 main.py
-```
-a bomo morali za tem vpisati naše geslo.
 
 Nato moramo le slediti navodilom, ki se izpisujejo v terminalu. Podatki se shranjujejo v mape, a edina zares pomembna je `data.csv`, v kateri se nahajajo podatki, ki nas dejansko zanimajo. 
 
@@ -60,11 +55,11 @@ Zajem podatkov lahko traja nekaj casa. Pri izvajanju na mojem računalniku je za
 
 
 ### Analiza
-Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za branje Jupyter Notebook-ov. Lažja možnost je, da si jo pogledamo kar na spletu na Github-u. Vsi grafi, rezultati in ugotovitve bodo predstavljene v tisti datoteki. Vse celice so bile pravilno poklicane, zato lahko analizo enostavno preberete brez dodatnega dela. Datotka je dostopna [na tej povezavi.](https://github.com/urbancluka/UVP-Projektna-naloga/blob/main/analiza.ipynb)
+Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za branje Jupyter Notebook-ov. Lažja možnost je, da si jo pogledamo kar na spletu na Github-u. Vsi grafi, rezultati in ugotovitve bodo predstavljene v tisti datoteki. Vse celice so bile pravilno poklicane, zato lahko analizo enostavno preberete brez dodatnega dela. Datoteka je dostopna [na tej povezavi.](https://github.com/urbancluka/UVP-Projektna-naloga/blob/main/analiza.ipynb)
 
 
 
-#### Spodnji seznam ni pomemben za uporabnika uporabnika in je namenjen avtorju
+#### Spodnji seznam ni pomemben za uporabnika in je namenjen avtorju
 ## TODO:
  - [x] Create function to download .html file with correct parameters
  - [x] Decide what website to scrap
