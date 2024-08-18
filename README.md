@@ -5,7 +5,7 @@ Namen projekta je pridobiti podatke s HTML [spletne strani](https://www.cars-dat
 
 ## Navodila za uporabo
 ### Nameščanje Python-a in git-a
-Predvidevam, da imate Python že nameščen na svojem računalniku. če temu ni tako, lahko za namestitev Python-a sledite navodilom na [tej spletni strani](https://www.python.org/downloads/). Alternativna izbira za uporabnike macOS je tudi uporaba Brew-a, za uporabnika Windows operacijskega sistema pa je Python na voljo tudi v Microsoft Store-u. Za nameščanje git-a lahko sledite navodilom [tukaj](https://github.com/git-guides/install-git)
+Predvidevam, da že imate Python nameščen na svojem računalniku. če temu ni tako, lahko za namestitev Python-a sledite navodilom na [tej spletni strani](https://www.python.org/downloads/). Alternativna izbira za uporabnike macOS je tudi uporaba Brew-a, za uporabnika Windows operacijskega sistema pa je Python na voljo tudi v Microsoft Store-u. Za nameščanje git-a lahko sledite navodilom [tukaj](https://github.com/git-guides/install-git)
 
 Če niste prepričani, ali je bilo nameščanje uspešno, ali pa se ne spomnite, če je python že nameščen, lahko preverite njegovo različico tako, da v terminal (na macOS ga lahko odpremo z: CMD + Space -> "Terminal" -> Enter) vpišemo 
 
@@ -37,13 +37,13 @@ pip3 install requests pandas numpy seaborn matplotlib
 ```
 
 ### Pridobivanja datotek z git-om
-Za uporabo programo morate naložiti vse datoteke na svoje račinalnik. Vse dotične datoteke tega programa lahko enostavno namestite tako da pozenete naslednji ukaz:
+Za uporabo programo morate naložiti vse datoteke na svoj račinalnik. Vse dotične datoteke tega programa lahko enostavno namestite tako da poženete naslednji ukaz:
 ```console 
 git clone https://github.com/urbancluka/UVP-Projektna-naloga.git
 ```
 
 ### Uporabljanje programa:
-Najprej se moramo prepričati, da se trenutno nahajamo v pravilen direktoriju. Ko smo se prepričali oziroma smo se ustrezno premaknili, lahko začnemo z delom, Za začetek izvajanja programa moramo pognati le `main.py`, kar storimo tako da v terminal vpišemo 
+Najprej se moramo prepričati, da se trenutno nahajamo v pravilen direktoriju. Ko smo se prepričali oziroma smo se ustrezno premaknili, lahko začnemo z delom. Za začetek izvajanja programa moramo pognati le `main.py`, kar storimo tako da v terminal vpišemo 
 ``` console 
 python3 main.py
 ```
@@ -56,7 +56,7 @@ a bomo morali za tem vpisati naše geslo.
 
 Nato moramo le slediti navodilom, ki se izpisujejo v terminalu. Podatki se shranjujejo v mape, a edina zares pomembna je `data.csv`, v kateri se nahajajo podatki, ki nas dejansko zanimajo. 
 
-Zajem podatkov lahko traja nekaj casa. Pri izvajanju na mojem računalniku je zajem podatkov trajal nekje med 30 do 60 minut, odvisno od hitrosti povezave in odgovorov strežnika. Sproti se izpisujejo tudi spletne strani, ki jih shranjuje. Ko nam izpise `Vase datoteke se nahajajo v datoteki 'data.csv'` je program zaključil z delom. 
+Zajem podatkov lahko traja nekaj casa. Pri izvajanju na mojem računalniku je zajem podatkov trajal nekje med 30 do 60 minut, odvisno od hitrosti povezave in odgovorov strežnika. Sproti se izpisujejo tudi spletne strani, ki jih shranjuje. Ko nam izpise `Vase datoteke se nahajajo v datoteki 'data.csv'`, je program zaključil z delom. 
 
 
 ### Analiza
@@ -73,6 +73,4 @@ Analiza se nahaja v datoteki `analiza.ipynb`, ki jo lahko odpremo s programom za
  - [x] Make website inputs a prompt for the user to enter ("enter starting page, enter last page...")
  - [x] Build loop into download_main function
  - [x] Fix power scrapping
- - [ ] Add test to see if file is empty in save_csv.py -> save_list_to_csv
- - [ ] Add test to see if list_of_data is same length as csv head
  - [x] Fix missing data point in acceleration
