@@ -1,4 +1,7 @@
-#This file contains the actual program that scraps the website. All that is needed to run the scrapping is to run this file.
+"""
+This file contains the actual program that scraps the website. All that is needed to run the scrapping is to run this file and 
+give required user inputs. Functions called in this file are defined in other .py files in directory.
+"""
 
 #Importing auxiliary files
 import download_file as dnf

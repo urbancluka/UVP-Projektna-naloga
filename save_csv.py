@@ -1,8 +1,8 @@
-#This file contains the functions related to saving data stored in python objects into organised .csv files.
+"""
+File contains all functions related to saving of data to ordered .csv files as well as creating .csv files to save to. 
+"""
 import csv
-import pandas as pd 
-#              id  price   transmission                     body type           seats drive    fuel type  cylinders power   torque topspeed  acceleration    consumption
-#list_of_data = [2, 25500, '5 speed manual transmission', '3-doors, convertible', 4, 'front', 'gasoline', 4, 1368, 'power', 206,      205,   7.9,            6.5]
+import pandas as pd  
 
 def create_main_csv(csv_name, list_of_fields=["Id",
                                               "Price (EUR)",
@@ -29,7 +29,3 @@ def save_list_to_csv(list_of_data, file_name="data.csv"):
     with open(f"{file_name}", "a+") as f:
         write = csv.writer(f)
         write.writerow(list_of_data)
-
-    
-
-save_list_to_csv([1, 3, 4, 5], "test.csv")

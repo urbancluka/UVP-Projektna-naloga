@@ -1,4 +1,6 @@
-#The purpose of this file is to contain a funcion which recieves a website and extracts the data on all the cars, which are shown on the site. 
+"""
+File contains all functions related to scrapping information from html files. 
+"""
 import re
 
 def get_urls_from_main(file):
@@ -22,7 +24,8 @@ def extract_name_and_id(list_of_urls):
         list_id.append([id, name, url])
     return list_id
 
-#print(extract_name_and_id(get_urls_from_main("page1.html")))
+# Example of use:
+# print(extract_name_and_id(get_urls_from_main("page1.html")))
 
 def get_content_from_car_page(id):
     """
@@ -42,7 +45,8 @@ def get_content_from_car_page(id):
     - max torque, 
     - top speed, 
     - acceleration, 
-    - consumption"""
+    - consumption
+    Missing data is replaced as NaN."""
     list_of_data = [id]
     with open(f"cars/{id}.html", "r") as f:
         content = f.read()
@@ -164,5 +168,5 @@ def get_content_from_car_page(id):
         return list_of_data
     
 
-#TEST CASE
-#print(get_content_from_car_page(2))
+# Example of use:
+# print(get_content_from_car_page(2))
