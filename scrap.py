@@ -8,9 +8,9 @@ def get_urls_from_main(file):
     with open(f"websites/{file}", "r") as f:
         content = f.read()
         re_link = r'<div class="col-4"> <a href="(.*?)" title="'
-        urls = re.findall(re_link, content)
+        urls = re.findall(re_link, content) # Finds all urls on main page. 
         for index in range(len(urls)):
-            urls[index] = urls[index] + "/tech"
+            urls[index] = urls[index] + "/tech" # Append /tech to url to get full website version
         return urls
 
 def extract_name_and_id(list_of_urls):
@@ -18,9 +18,9 @@ def extract_name_and_id(list_of_urls):
     list_id = []
     for url in list_of_urls:
         re_id = r'-specs/(\d*)'
-        id = int(re.search(re_id, url).group()[7:])
+        id = int(re.search(re_id, url).group()[7:]) # Get numeric Id from url
         re_name = r'https://www.cars-data.com/en/(.*?)-specs'
-        name = re.search(re_name, url).group()[29:-6]
+        name = re.search(re_name, url).group()[29:-6] # Get name from url
         list_id.append([id, name, url])
     return list_id
 
@@ -51,12 +51,12 @@ def get_content_from_car_page(id):
     with open(f"cars/{id}.html", "r") as f:
         content = f.read()
 
-        re_price = r'Price:</td><td class="col-6 grey">&euro; (.*?)</td></tr>'
-        try:
-            price = re.findall(re_price, content)[0]
+        re_price = r'Price:</td><td class="col-6 grey">&euro; (.*?)</td></tr>' # Div which contains information
+        try: # Try and find it and cast to int
+            price = re.findall(re_price, content)[0] # Raises Error if none are found
             price = re.sub("[.]", "", price)
-            price = int(price)
-        except (ValueError, IndexError) as e:
+            price = int(price) # Raises Error if data isn't correct
+        except (ValueError, IndexError) as e: # If any errors are raised, set value to NaN
             price = "NaN"
         list_of_data.append(price)
         

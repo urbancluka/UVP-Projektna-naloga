@@ -22,10 +22,10 @@ def create_main_csv(csv_name, list_of_fields=["Id",
     """Function creates a .csv file with the fields given in the list list_of_fields. Returns None"""
     with open(f"{csv_name}", "w") as f:
         write = csv.writer(f)
-        write.writerow(list_of_fields)
+        write.writerow(list_of_fields) # Write list of data as first row in .csv file, thereby setting the header
 
 def save_list_to_csv(list_of_data, file_name="data.csv"):
     """Function writes list of data into an existing .csv file."""
     with open(f"{file_name}", "a+") as f:
         write = csv.writer(f)
-        write.writerow(list_of_data)
+        write.writerow(list_of_data) # Save row of data to given .csv file
